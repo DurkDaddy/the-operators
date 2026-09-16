@@ -2,7 +2,7 @@
 
 A one-page public website for The Operators, the sports agency for tech talent.
 
-Durkin and a team of humans and AIs support career, health, finances, EA responsibilities, network, and everyday experiences.
+Durkin and a team of humans and AIs support career, health, finances, EA responsibilities, network, and travel.
 
 ## Build
 

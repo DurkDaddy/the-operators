@@ -18,7 +18,7 @@ class Page(HTMLParser):
   self.text.append(d)
   if self.inh3:self.headings.append(d)
 p=Page((OUT/'index.html').read_text());errors=[]
-expected=['Career','Health','Finances','EA responsibilities','Your network','Everyday experiences']
+expected=['Career','Health','Finances','EA responsibilities','Your network','Travel']
 if p.headings!=expected:errors.append('Service headings differ from the requested six')
 for u in p.refs:
  x=urlsplit(u)
@@ -33,7 +33,7 @@ for forbidden in ['Your life.','Your rules.','Let\'s make good things happen.','
  if forbidden in words:errors.append('Retired homepage copy '+forbidden)
 if re.search(r'\bRyan\b',words):errors.append('Old visible name')
 files=[str(f.relative_to(OUT)) for f in OUT.rglob('*') if f.is_file()]
-allowed={'index.html','404.html','sitemap.xml','robots.txt','.nojekyll'}|{'assets/'+s for s in ['site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','marker.ttf','condensed.ttf','FONT-LICENSE-Barlow.txt','FONT-LICENSE-Marker.txt']}
+allowed={'index.html','404.html','sitemap.xml','robots.txt','.nojekyll'}|{'assets/'+s for s in ['site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','marker.ttf','FONT-LICENSE-Marker.txt']}
 if set(files)!=allowed:errors.append('Public files differ from explicit allowlist: '+str(set(files)^allowed))
 if (OUT/'sitemap.xml').read_text().count('<loc>')!=1:errors.append('Sitemap must contain only homepage')
 print(json.dumps({'public_pages':1,'service_headings':p.headings,'public_files':len(files),'errors':errors},indent=2));sys.exit(bool(errors))
