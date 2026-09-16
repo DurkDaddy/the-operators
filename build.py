@@ -6,11 +6,12 @@ ROOT=Path(__file__).resolve().parent
 OUT=ROOT/'dist'
 BASE=os.environ.get('BASE_PATH','/the-operators').rstrip('/')
 ORIGIN=os.environ.get('SITE_ORIGIN','https://massaicoalition.com').rstrip('/')
-PUBLIC_ASSETS=('site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','boston-graffiti-v2.png','marker.ttf','FONT-LICENSE-Marker.txt')
+PUBLIC_ASSETS=('site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','boston-graffiti-v2.png','boston-vibrant.png','marker.ttf','FONT-LICENSE-Marker.txt')
 if OUT.exists():shutil.rmtree(OUT)
 (OUT/'assets').mkdir(parents=True)
 for filename in PUBLIC_ASSETS:shutil.copy2(ROOT/'assets'/filename,OUT/'assets'/filename)
 css=(OUT/'assets/site.css').read_text().replace("url('/assets/graffiti.jpg')","url(graffiti.jpg)").replace("url('/assets/boston-graffiti-v2.png')","url(boston-graffiti-v2.png)")
+css=re.sub(r"url\((['\"]?)/assets/",r"url(\1",css)
 (OUT/'assets/site.css').write_text(css)
 version=hashlib.sha256(css.encode()).hexdigest()[:10]
 for source,path in [('home.html','/'),('learn-more.html','/learn-more/')]:
