@@ -23,7 +23,7 @@ class Page(HTMLParser):
 pages={p:Page((OUT/p).read_text()) for p in ['index.html','learn-more/index.html']};errors=[]
 expected=['Career','Network','EA','Health','Finances','Travel']
 if pages['index.html'].headings!=expected:errors.append('Service order incorrect')
-if ' '.join(pages['learn-more/index.html'].main).strip()!='Durkin is currently building other companies right now':errors.append('Learn More main text differs from requested exact text')
+if ' '.join(pages['learn-more/index.html'].main).strip()!='Durkin is currently building the Mass AI Coalition right now and is putting 100% of his focus into that.':errors.append('Learn More main text differs from requested exact text')
 for name,p in pages.items():
  for u in p.refs:
   x=urlsplit(u)
