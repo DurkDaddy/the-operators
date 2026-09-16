@@ -7,7 +7,7 @@ OUT=ROOT/'dist'
 BASE=os.environ.get('BASE_PATH','').rstrip('/')
 production_host=os.environ.get('VERCEL_PROJECT_PRODUCTION_URL')
 ORIGIN=os.environ.get('SITE_ORIGIN',('https://'+production_host) if production_host else 'https://www.theoperators.co').rstrip('/')
-PUBLIC_ASSETS=('site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','atlas-nyc-graffiti.png','marker.ttf','FONT-LICENSE-Marker.txt')
+PUBLIC_ASSETS=('site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','atlas-nyc-graffiti.png','marker.ttf','FONT-LICENSE-Marker.txt','knewave.ttf','FONT-LICENSE-Knewave.txt')
 if OUT.exists():shutil.rmtree(OUT)
 (OUT/'assets').mkdir(parents=True)
 for filename in PUBLIC_ASSETS:shutil.copy2(ROOT/'assets'/filename,OUT/'assets'/filename)

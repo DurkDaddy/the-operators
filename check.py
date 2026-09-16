@@ -37,7 +37,7 @@ for name,p in pages.items():
  words=' '.join(p.text)
  if re.search(r'\bRyan\b|Talk to Durkin|contact@|Your life\.|Your rules\.',words):errors.append('Retired name or contact text '+name)
 files=[str(f.relative_to(OUT)) for f in OUT.rglob('*') if f.is_file()]
-allowed={'index.html','learn-more/index.html','404.html','sitemap.xml','robots.txt','.nojekyll'}|{'assets/'+s for s in ['site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','atlas-nyc-graffiti.png','marker.ttf','FONT-LICENSE-Marker.txt']}
+allowed={'index.html','learn-more/index.html','404.html','sitemap.xml','robots.txt','.nojekyll'}|{'assets/'+s for s in ['site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','atlas-nyc-graffiti.png','marker.ttf','FONT-LICENSE-Marker.txt','knewave.ttf','FONT-LICENSE-Knewave.txt']}
 if set(files)!=allowed:errors.append('Public files differ from allowlist: '+str(set(files)^allowed))
 if (OUT/'sitemap.xml').read_text().count('<loc>')!=2:errors.append('Sitemap must contain only homepage and Learn More')
 if 'atlas-nyc-graffiti.png' not in (OUT/'index.html').read_text():errors.append('Agent and talent mural is missing')
