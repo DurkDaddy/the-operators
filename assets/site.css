@@ -53,7 +53,7 @@
 .talent-edition .durkin-feature{max-width:1296px;width:90%;margin:25px auto 80px;border:0;background:#f5f5f2;color:#111}
 .talent-edition .durkin-copy .small{color:#111}
 .talent-edition .durkin-copy h2{font-size:clamp(36px,3.8vw,53px)}
-.talent-edition .durkin-photo{background: url('/assets/agent-talent-graffiti.png') center/cover}
+.talent-edition .durkin-photo{background: url('/assets/talent-mvp-graffiti.png') center/cover}
 .talent-edition footer{background:white;color:#111;max-width:1440px;padding:32px 5%;margin:auto;border-top:1px solid #ddd}
 .talent-edition .footer-bottom{color:#555;border-color:#ddd}
 .talent-edition .button{box-shadow:none;border:0;background:#111;color:#fff;padding:14px 24px}
@@ -66,5 +66,5 @@
 .talent-edition .hero-single{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5%;align-items:center;padding-top:30px;padding-bottom:55px}
 .talent-edition .hero-single .hero-copy{padding:0;min-width:0}.talent-edition .hero-single h1{font-size:clamp(36px,4vw,58px);line-height:1.23}.talent-edition .hero-single .hero-analogy{font-size:22px}.talent-edition .hero-single .lead{font-size:18px}
 .talent-edition .talent-mural{margin:0;min-width:0}.talent-edition .talent-mural img{width:100%;aspect-ratio:1;object-fit:contain}
-.talent-edition .durkin-photo{background-image:url('/assets/agent-talent-graffiti.png')}
+.talent-edition .durkin-photo{background-image:url('/assets/talent-mvp-graffiti.png')}
 @media(max-width:800px){.talent-edition .hero-single{grid-template-columns:minmax(0,1fr);gap:30px;padding-top:25px;padding-bottom:30px}.talent-edition .hero-single h1{font-size:clamp(36px,8vw,56px)}.talent-edition .talent-mural{margin:0}.talent-edition .hero-single .hero-analogy{font-size:20px}}
