@@ -37,8 +37,8 @@ for name,p in pages.items():
  words=' '.join(p.text)
  if re.search(r'\bRyan\b|Talk to Durkin|contact@|Your life\.|Your rules\.',words):errors.append('Retired name or contact text '+name)
 files=[str(f.relative_to(OUT)) for f in OUT.rglob('*') if f.is_file()]
-allowed={'index.html','learn-more/index.html','404.html','sitemap.xml','robots.txt','.nojekyll'}|{'assets/'+s for s in ['site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','boston-graffiti-v2.png','boston-vibrant.png','marker.ttf','FONT-LICENSE-Marker.txt']}
+allowed={'index.html','learn-more/index.html','404.html','sitemap.xml','robots.txt','.nojekyll'}|{'assets/'+s for s in ['site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','boston-graffiti-v2.png','boston-skyline-revised.png','marker.ttf','FONT-LICENSE-Marker.txt']}
 if set(files)!=allowed:errors.append('Public files differ from allowlist: '+str(set(files)^allowed))
 if (OUT/'sitemap.xml').read_text().count('<loc>')!=2:errors.append('Sitemap must contain only homepage and Learn More')
-if 'boston-vibrant.png' not in (OUT/'index.html').read_text():errors.append('Vibrant Boston mural is missing')
+if 'boston-skyline-revised.png' not in (OUT/'index.html').read_text():errors.append('Vibrant Boston mural is missing')
 print(json.dumps({'public_pages':2,'service_headings':pages['index.html'].headings,'public_files':len(files),'errors':errors},indent=2));sys.exit(bool(errors))

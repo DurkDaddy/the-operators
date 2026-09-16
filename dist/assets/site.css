@@ -66,5 +66,5 @@
 .boston-edition .hero-single{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5%;align-items:center;padding-top:30px;padding-bottom:55px}
 .boston-edition .hero-single .hero-copy{padding:0;min-width:0}.boston-edition .hero-single h1{font-size:clamp(36px,4vw,58px);line-height:1.23}.boston-edition .hero-single .hero-analogy{font-size:22px}.boston-edition .hero-single .lead{font-size:18px}
 .boston-edition .boston-mural{margin:0;min-width:0}.boston-edition .boston-mural img{width:100%;aspect-ratio:1;object-fit:contain}
-.boston-edition .durkin-photo{background-image:url('boston-vibrant.png')}
+.boston-edition .durkin-photo{background-image:url('boston-skyline-revised.png')}
 @media(max-width:800px){.boston-edition .hero-single{grid-template-columns:minmax(0,1fr);gap:30px;padding-top:25px;padding-bottom:30px}.boston-edition .hero-single h1{font-size:clamp(36px,8vw,56px)}.boston-edition .boston-mural{margin:0}.boston-edition .hero-single .hero-analogy{font-size:20px}}
