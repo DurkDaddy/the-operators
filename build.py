@@ -4,8 +4,9 @@ from pathlib import Path
 import os,re,shutil,html,hashlib
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/'dist'
-BASE=os.environ.get('BASE_PATH','/the-operators').rstrip('/')
-ORIGIN=os.environ.get('SITE_ORIGIN','https://massaicoalition.com').rstrip('/')
+BASE=os.environ.get('BASE_PATH','').rstrip('/')
+production_host=os.environ.get('VERCEL_PROJECT_PRODUCTION_URL')
+ORIGIN=os.environ.get('SITE_ORIGIN',('https://'+production_host) if production_host else 'https://www.theoperators.co').rstrip('/')
 PUBLIC_ASSETS=('site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','talent-mvp-graffiti.png','marker.ttf','FONT-LICENSE-Marker.txt')
 if OUT.exists():shutil.rmtree(OUT)
 (OUT/'assets').mkdir(parents=True)

@@ -13,6 +13,10 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Temporary legacy preview only; remove this workflow after Vercel is verified.
+    env:
+      BASE_PATH: /the-operators
+      SITE_ORIGIN: https://massaicoalition.com
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

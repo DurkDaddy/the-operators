@@ -3,7 +3,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 import os,re,sys,json
-ROOT=Path(__file__).resolve().parent;OUT=ROOT/'dist';BASE=os.environ.get('BASE_PATH','/the-operators').rstrip('/')
+ROOT=Path(__file__).resolve().parent;OUT=ROOT/'dist';BASE=os.environ.get('BASE_PATH','').rstrip('/')
 class Page(HTMLParser):
  def __init__(self,s):super().__init__();self.refs=[];self.ids=set();self.text=[];self.headings=[];self.inh3=False;self.inmain=False;self.main=[];self.feed(s)
  def handle_starttag(self,t,a):
@@ -41,4 +41,7 @@ allowed={'index.html','learn-more/index.html','404.html','sitemap.xml','robots.t
 if set(files)!=allowed:errors.append('Public files differ from allowlist: '+str(set(files)^allowed))
 if (OUT/'sitemap.xml').read_text().count('<loc>')!=2:errors.append('Sitemap must contain only homepage and Learn More')
 if 'talent-mvp-graffiti.png' not in (OUT/'index.html').read_text():errors.append('Agent and talent mural is missing')
+if not BASE:
+ for name in ['index.html','learn-more/index.html','sitemap.xml','robots.txt']:
+  if re.search(r'https?://(?:www\.)?(?:massaicoalition|massaialliance)\.com', (OUT/name).read_text()):errors.append('Standalone site links to Coalition hosting in '+name)
 print(json.dumps({'public_pages':2,'service_headings':pages['index.html'].headings,'public_files':len(files),'errors':errors},indent=2));sys.exit(bool(errors))
