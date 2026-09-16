@@ -14,4 +14,4 @@ All calls to action lead to `/learn-more/`. Its only main text is “Durkin is c
 
 Profile source and history are retained separately in a private repository and excluded from this public repository. Removed URLs return 404 and are absent from the sitemap. Search engines may retain previously indexed pages until recrawling.
 
-The original Operators logo and Durkin's yellow-background portrait are supplied assets. The vibrant square Boston graffiti mural was generated for this project. The Chief of Staff preview is the current design source of truth. Font licenses are in `assets/`.
+The original Operators logo and Durkin's yellow-background portrait are supplied assets. The agent and tech talent graffiti artwork was generated for this project. This repository is the canonical source for subsequent direct edits. Font licenses are in `assets/`.

@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parent
 OUT=ROOT/'dist'
 BASE=os.environ.get('BASE_PATH','/the-operators').rstrip('/')
 ORIGIN=os.environ.get('SITE_ORIGIN','https://massaicoalition.com').rstrip('/')
-PUBLIC_ASSETS=('site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','boston-graffiti-v2.png','boston-skyline-revised.png','marker.ttf','FONT-LICENSE-Marker.txt')
+PUBLIC_ASSETS=('site.css','favicon.svg','operators-logo.png','durkin.png','graffiti.jpg','agent-talent-graffiti.png','marker.ttf','FONT-LICENSE-Marker.txt')
 if OUT.exists():shutil.rmtree(OUT)
 (OUT/'assets').mkdir(parents=True)
 for filename in PUBLIC_ASSETS:shutil.copy2(ROOT/'assets'/filename,OUT/'assets'/filename)
